@@ -1,0 +1,57 @@
+= Visão de execução
+
+== Fluxo ponta a ponta
+
+image::fluxo-do-sistema.svg[Sequência de registro, consolidação e consulta,align="center"]
+
+== Registrar lançamento
+
+. O Comerciante envia a requisição autenticada com uma chave de idempotência.
+. A API obtém o comerciante do token e valida o contrato.
+. O pipeline do MediatR aplica validação, autorização, tracing e idempotência.
+. O Handler cria o lançamento e aplica suas invariantes.
+. Uma única transação grava lançamento, idempotência e Outbox.
+. Depois do commit, a API devolve a identificação do lançamento.
+
+Se a mesma chave e o mesmo payload forem repetidos, a resposta original é devolvida. A mesma chave
+com outro conteúdo é rejeitada como conflito. Falha antes do commit não deixa gravação parcial.
+
+== Publicar a Outbox
+
+. O publisher abre uma transação curta e reivindica um lote de pendências.
+. Bloqueio seguro e lease impedem que instâncias processem a mesma linha simultaneamente.
+. A transação é encerrada antes da chamada de rede.
+. O evento é publicado no Pub/Sub.
+. Após confirmação do broker, a linha é marcada como publicada.
+
+Se a instância cair, o lease expira e outra instância pode continuar. Se ela publicar e cair antes
+de marcar o sucesso, o evento pode ser publicado novamente com o mesmo EventId.
+
+== Atualizar o consolidado
+
+. O Pub/Sub entrega o evento ao Worker.
+. O Worker valida versão, campos obrigatórios e EventId.
+. Em uma transação MongoDB, insere o EventId e atualiza atomicamente o saldo diário.
+. Depois do commit, envia ACK ao Pub/Sub.
+
+Uma reentrega encontra o EventId já processado, não altera o saldo novamente e pode ser confirmada.
+Erros transitórios provocam nova tentativa; mensagens inválidas ou persistentemente problemáticas
+são direcionadas para tratamento operacional.
+
+== Consultar o saldo
+
+. O Comerciante solicita o consolidado de uma data.
+. A API obtém o comerciante do token.
+. O Query Handler consulta +daily_balances+ pela chave composta.
+. A resposta contém créditos, débitos, saldo e instante da última atualização.
+
+A leitura pode estar temporariamente atrasada. Esse atraso não muda o estado do lançamento
+confirmado no PostgreSQL.
+
+== Recuperar um acúmulo
+
+Após indisponibilidade, o consumo recomeça com concorrência e taxa limitadas. A operação acompanha
+quantidade e idade das pendências, vazão, latência de escrita, conexões e erros do MongoDB, além da
+latência da API de consulta. O consumo é reduzido quando o banco se aproxima da saturação. Replay e
+reconciliação permanecem seguros por causa da idempotência.
+

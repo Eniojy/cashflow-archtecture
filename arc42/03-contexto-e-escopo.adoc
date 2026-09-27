@@ -1,0 +1,78 @@
+= Contexto e escopo
+
+== Contexto de negócio
+
+O Comerciante é o único ator humano do escopo. Ele registra lançamentos e consulta seus lançamentos
+e seu saldo diário. Os domínios Lançamentos e Consolidado aparecem dentro da fronteira da solução
+porque possuem dados, regras, consistência e disponibilidade diferentes.
+
+image::c4-system-context.svg[C4 N1 - Contexto do sistema,align="center"]
+
+=== Relações de negócio
+
+[cols="2,2,4",options="header"]
+|===
+|Origem |Destino |Finalidade
+
+|Comerciante
+|Lançamentos
+|Registrar crédito ou débito e consultar o histórico próprio
+
+|Comerciante
+|Consolidado
+|Consultar totais e saldo de uma data
+
+|Lançamentos
+|Consolidado
+|Comunicar que um lançamento foi confirmado, sem chamada síncrona entre os domínios
+|===
+
+== Contexto técnico
+
+[cols="2,2,2,4",options="header"]
+|===
+|Interface |Direção |Tecnologia |Contrato e observações
+
+|API de Lançamentos
+|Entrada
+|HTTPS e JSON
+|JWT, chave de idempotência, criação e consulta paginada
+
+|API de Consolidado
+|Entrada
+|HTTPS e JSON
+|JWT, consulta por data e informação da última atualização
+
+|Evento de lançamento
+|Lançamentos para Consolidado
+|Pub/Sub
+|Contrato versionado +LancamentoRegistrado.v1+ e entrega pelo menos uma vez
+
+|Identidade
+|Gateway e APIs
+|OAuth 2.0 e OpenID Connect
+|Autenticação, scopes e identificação do comerciante
+
+|Telemetria
+|Aplicações para plataforma de observabilidade
+|OpenTelemetry
+|Logs, métricas e traces correlacionados
+|===
+
+== Dentro do escopo
+
+* Registro e consulta de lançamentos.
+* Publicação confiável do fato de negócio.
+* Atualização idempotente do saldo diário.
+* Consulta do consolidado.
+* Autenticação, autorização, observabilidade e recuperação operacional.
+* Estratégia opcional de transição a partir de uma plataforma legada.
+
+== Fora do escopo
+
+* Interface de usuário.
+* Liquidação, cobrança, conciliação bancária e faturamento.
+* Contabilidade formal e relatórios regulatórios.
+* Implementação da aplicação ou do pipeline de entrega.
+* Definição final de preços de nuvem sem volumetria validada.
+

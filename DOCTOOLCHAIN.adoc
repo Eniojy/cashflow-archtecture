@@ -1,0 +1,77 @@
+= Gerar a documentação com docToolchain
+:toc:
+
+O projeto utiliza o wrapper oficial do docToolchain para transformar
++arc42/README.adoc+ em HTML e PDF. A configuração está em
++docToolchainConfig.groovy+.
+
+== Pré-requisito no Windows
+
+O fluxo configurado utiliza Docker, evitando a instalação local de Java.
+Inicie o Docker Desktop antes de executar os comandos.
+
+== Gerar HTML
+
+Abra um terminal PowerShell na pasta +outputs+ e execute:
+
+[source,powershell]
+----
+.\dtcw.ps1 docker generateHTML
+----
+
+O resultado será criado em:
+
+[source,text]
+----
+build/docs/html5/README.html
+----
+
+Para abrir o resultado:
+
+[source,powershell]
+----
+Start-Process .\build\docs\html5\README.html
+----
+
+== Gerar PDF
+
+[source,powershell]
+----
+.\dtcw.ps1 docker generatePDF
+----
+
+O resultado será criado em:
+
+[source,text]
+----
+build/docs/pdf/README.pdf
+----
+
+Para abrir o resultado:
+
+[source,powershell]
+----
+Start-Process .\build\docs\pdf\README.pdf
+----
+
+== Primeira execução
+
+A primeira execução demora mais porque o Docker baixa a imagem do
+docToolchain. As seguintes reutilizam as camadas já armazenadas.
+
+Se o PowerShell bloquear o wrapper, execute uma vez:
+
+[source,powershell]
+----
+Unblock-File .\dtcw.ps1
+----
+
+== Limpar artefatos gerados
+
+[source,powershell]
+----
+Remove-Item -Recurse -Force .\build
+----
+
+A pasta +build+ contém somente artefatos gerados e não deve ser versionada.
+

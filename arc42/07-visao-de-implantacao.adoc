@@ -1,0 +1,80 @@
+= Visão de implantação
+
+== Ambiente de produção
+
+[cols="2,2,4",options="header"]
+|===
+|Nó ou serviço |Workload |Responsabilidade operacional
+
+|API Gateway
+|Entrada HTTPS
+|Terminação TLS, validação de token, quotas, proteção e roteamento
+
+|Cloud Run
+|Lançamentos API
+|Escala horizontal do caminho de registro e consulta de lançamentos
+
+|Cloud Run
+|Consolidado API
+|Escala horizontal das consultas ao saldo
+
+|Cloud Run
+|Consolidado Worker
+|Consumo assíncrono com concorrência e taxa controladas
+
+|Cloud SQL com alta disponibilidade
+|PostgreSQL
+|Fonte da verdade de Lançamentos, réplica síncrona entre zonas, backup e restauração
+
+|Pub/Sub
+|Tópico, assinatura e fila de mensagens não processadas
+|Retenção, retentativa e desacoplamento dos domínios
+
+|MongoDB Atlas
+|Replica set
+|Read model persistente, transações, backup e restauração
+
+|Secret Manager
+|Segredos e certificados
+|Armazenamento seguro, rotação e acesso por identidade de serviço
+
+|Google Cloud Operations
+|Logs, métricas e traces
+|Dashboards, alertas e investigação
+|===
+
+== Distribuição e isolamento
+
+As APIs e o Worker são implantados separadamente para permitir escala, limites e rollback
+independentes. Os processos são stateless; o estado durável permanece nos bancos e no Pub/Sub.
+Cada workload utiliza uma identidade de serviço com permissões mínimas.
+
+O PostgreSQL de Lançamentos é configurado para alta disponibilidade entre zonas. Essa configuração
+protege falhas de instância e zona, mas não substitui uma estratégia para desastre regional.
+MongoDB Atlas utiliza réplica, confirmação por maioria e backup contínuo de acordo com o plano
+contratado.
+
+== Escalabilidade
+
+* Lançamentos API escala por concorrência HTTP, respeitando o limite de conexões do PostgreSQL.
+* Consolidado API escala por consultas, respeitando o pool do MongoDB.
+* Consolidado Worker escala por backlog, com teto de concorrência para proteger o banco.
+* Outbox Publisher processa lotes pequenos; aumentar instâncias exige reivindicação segura por
+  lease.
+* Instâncias mínimas podem ser configuradas quando a latência de inicialização comprometer a meta.
+
+== Entrega e rollback
+
+Cada imagem deve ser imutável, identificável e promovida entre ambientes. O rollout deve ser
+gradual e acompanhado por taxa de erro, latência e sinais de integridade. Se uma nova revisão
+degradar o serviço, o tráfego volta à revisão estável. Mudanças de banco precisam ser compatíveis
+com a versão anterior durante o período de transição.
+
+== Recuperação
+
+* Falha do Consolidado não interrompe Lançamentos; eventos aguardam na Outbox ou no Pub/Sub.
+* Falha do Pub/Sub mantém a intenção de publicação na Outbox.
+* Falha do PostgreSQL impede novas confirmações até o failover ou restauração.
+* Falha do MongoDB atrasa a projeção; mensagens permanecem retidas até o retorno.
+* Após a recuperação, o backlog é drenado gradualmente e uma reconciliação confirma a convergência.
+

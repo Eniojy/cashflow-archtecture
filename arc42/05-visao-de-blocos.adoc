@@ -1,0 +1,76 @@
+= Visão de blocos
+
+== Nível 1: solução e domínios
+
+No nível mais alto, o sistema oferece ao Comerciante duas capacidades: controlar lançamentos e
+consultar o saldo diário. BIAN serve como referência para a linguagem e os limites de negócio, sem
+substituir a análise específica deste problema.
+
+image::c4-system-context.svg[C4 N1 - Domínios da solução,align="center"]
+
+== Nível 2: contêineres
+
+image::c4-containers.svg[C4 N2 - Contêineres,align="center"]
+
+[cols="2,2,4",options="header"]
+|===
+|Contêiner |Tecnologia |Responsabilidade
+
+|Gateway e identidade
+|API Gateway, provedor de identidade
+|Proteger a borda, autenticar, aplicar quotas e encaminhar chamadas
+
+|Lançamentos API
+|.NET no Cloud Run
+|Registrar e consultar lançamentos; confirmar somente após commit local
+
+|PostgreSQL de Lançamentos
+|Cloud SQL
+|Armazenar lançamentos, idempotência e Outbox
+
+|Outbox Publisher
+|HostedService .NET
+|Reivindicar pendências, publicar eventos e registrar o resultado
+
+|Pub/Sub
+|Mensageria gerenciada
+|Transportar eventos com retenção, retentativas e fila de mensagens não processadas
+
+|Consolidado Worker
+|.NET no Cloud Run
+|Validar, deduplicar e aplicar eventos ao read model
+
+|MongoDB do Consolidado
+|MongoDB Atlas
+|Armazenar eventos processados e saldos diários
+
+|Consolidado API
+|.NET no Cloud Run
+|Consultar o documento diário e devolver sua última atualização
+|===
+
+== Nível 3: componentes de Lançamentos
+
+image::c4-components-lancamentos.svg[C4 N3 - Componentes de Lançamentos,align="center"]
+
+O endpoint transforma a requisição em Command ou Query. Behaviors aplicam validação, autorização,
+observabilidade, idempotência e transação conforme o caso. O Handler de registro executa as regras
+do Aggregate e utiliza a Unit of Work para confirmar +lancamentos+, +idempotency_keys+ e +outbox+
+atomicamente. O HostedService processa a Outbox fora do caminho HTTP.
+
+== Nível 3: componentes de Consolidado
+
+image::c4-components-consolidado.svg[C4 N3 - Componentes do Consolidado,align="center"]
+
+O Worker recebe o evento, valida o contrato e inicia uma transação MongoDB. A inserção em
++processed_events+ possui índice único por EventId e ocorre junto com a atualização atômica de
++daily_balances+. A API de consulta acessa o read model por índice composto de comerciante e data.
+
+== Regras de dependência
+
+* Um contexto não acessa o banco do outro.
+* O contrato público e o evento versionado são as fronteiras de integração.
+* A camada de domínio não depende de HTTP, Pub/Sub, MediatR ou drivers de banco.
+* Repositórios e publicadores implementam portas definidas pela camada de aplicação.
+* Alterações no schema interno não devem vazar para consumidores externos.
+

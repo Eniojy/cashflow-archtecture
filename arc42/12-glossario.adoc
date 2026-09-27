@@ -1,0 +1,67 @@
+= Glossário
+
+[cols="2,5",options="header"]
+|===
+|Termo |Definição neste projeto
+
+|ACK
+|Confirmação enviada ao Pub/Sub depois que o consumidor conclui o processamento durável
+
+|Append-only
+|Modelo em que fatos financeiros confirmados não são alterados ou apagados; correções são novos fatos
+
+|Backoff
+|Aumento progressivo do intervalo entre novas tentativas
+
+|BIAN
+|Referência da indústria financeira utilizada para apoiar a linguagem e a separação de capacidades
+
+|Bounded context
+|Limite explícito de modelo, regras, dados e responsabilidade de uma capacidade de negócio
+
+|C4
+|Modelo de documentação em níveis de contexto, contêineres, componentes e código
+
+|Chave de idempotência
+|Identificador fornecido pelo cliente para que a repetição da mesma operação produza o mesmo resultado
+
+|Circuit breaker
+|Mecanismo que interrompe temporariamente chamadas a uma dependência instável
+
+|CQRS
+|Separação entre operações que alteram estado e operações de consulta
+
+|EventId
+|Identificador estável de um evento, usado para deduplicar reentregas
+
+|Event Sourcing
+|Persistência do estado como sequência de eventos reproduzíveis; não é utilizado nesta solução
+
+|Idempotência
+|Propriedade pela qual repetir uma operação não cria um novo efeito de negócio
+
+|Lease
+|Posse temporária de um item de trabalho; outra instância pode assumi-lo após o vencimento
+
+|MediatR
+|Biblioteca de despacho dentro do processo para Commands, Queries e Behaviors
+
+|Outbox
+|Tabela persistida junto ao dado de negócio para registrar a intenção de publicar um evento
+
+|Pub/Sub
+|Serviço de mensageria usado para transportar eventos entre os bounded contexts
+
+|Read model
+|Representação pré-calculada e otimizada para consulta
+
+|Reconciliação
+|Comparação entre fonte da verdade e projeções para detectar e corrigir divergências
+
+|Runbook
+|Procedimento operacional para diagnosticar, mitigar e escalar um incidente
+
+|Upsert
+|Operação que atualiza um registro existente ou o cria quando não existe
+|===
+

@@ -1,0 +1,74 @@
+= Riscos e dívida técnica
+
+== Riscos arquiteturais
+
+[cols="3,1,1,4",options="header"]
+|===
+|Risco |Probabilidade |Impacto |Mitigação
+
+|PostgreSQL tornar-se gargalo de escrita e conexões
+|Média
+|Alto
+|Pool limitado, índices medidos, lotes de Outbox, teste de carga e escala vertical antes de particionar
+
+|Documento diário muito disputado por um comerciante
+|Média
+|Alto
+|Atualização atômica, teste com concentração realista e revisão do modelo se houver hot document
+
+|Backlog crescer mais rápido que a capacidade do Worker
+|Média
+|Alto
+|Alertar por quantidade e idade, limitar concorrência, reservar capacidade de consulta e escalar gradualmente
+
+|Persistência poliglota aumentar custo e conhecimento exigido
+|Alta
+|Médio
+|Automação, runbooks, treinamento e reavaliação do uso de PostgreSQL nos dois contextos
+
+|HostedService compartilhar falha e escala com a API
+|Média
+|Médio
+|Instâncias mínimas, sinal de atividade e extração para Worker dedicado quando houver evidência
+
+|Retenção expirar antes da recuperação
+|Baixa
+|Muito alto
+|Política alinhada ao pior incidente, alertas precoces, backup e reconciliação
+
+|Mudança incompatível no contrato de evento
+|Média
+|Alto
+|Versionamento, compatibilidade retroativa, teste de contrato e implantação coordenada
+
+|Dependência operacional dos serviços GCP
+|Média
+|Médio
+|Infraestrutura como código, contratos isolados e plano explícito para desastre regional
+
+|Licenciamento ou evolução do MediatR
+|Média
+|Baixo
+|Isolar o mediator na camada de aplicação e manter alternativas avaliadas
+|===
+
+== Dívida técnica e pontos em aberto
+
+* Confirmar volumetria, tamanho médio de evento e distribuição por comerciante.
+* Definir retenção de idempotência, Outbox, eventos processados e telemetria.
+* Definir política de mensagens não processadas, aprovação e replay.
+* Especificar contrato OpenAPI e schema de +LancamentoRegistrado.v1+.
+* Implementar reconciliação automatizada e relatório de divergências.
+* Criar runbooks para Outbox acumulada, backlog, banco saturado e restauração.
+* Confirmar região, residência de dados, criptografia gerenciada pelo cliente e requisitos legais.
+* Validar o custo real com calculadoras e carga medida.
+* Definir plano de desastre regional e critério de retorno à região principal.
+* Avaliar se o publisher deve se tornar um deploy separado após testes operacionais.
+
+== Critérios para introduzir mais complexidade
+
+Redis, particionamento, Kubernetes, novos microserviços ou bancos adicionais somente devem ser
+adotados quando uma métrica demonstrar limite real, quando uma meta de qualidade não puder ser
+atingida pela solução atual ou quando uma obrigação regulatória exigir a mudança. A decisão deve
+ser registrada em um novo ADR.
+

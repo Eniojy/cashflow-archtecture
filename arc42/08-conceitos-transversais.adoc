@@ -1,0 +1,79 @@
+= Conceitos transversais
+
+== Identidade e autorização
+
+O Gateway valida tokens emitidos pelo provedor de identidade. As APIs exigem scopes por capacidade
+e derivam o comerciante de um claim confiável. Um comerciante não pode selecionar livremente outro
+identificador no payload ou na URL. Essa regra previne acesso horizontal a dados de terceiros.
+
+== Idempotência
+
+Existem três identificadores com responsabilidades diferentes:
+
+* *Chave de idempotência:* fornecida pelo cliente e reutilizada em uma nova tentativa da mesma
+  operação. Seu escopo inclui o comerciante.
+* *EventId:* criado uma vez para o evento de integração e preservado em republicações.
+* *CorrelationId ou contexto de trace:* relaciona os passos de uma execução para diagnóstico.
+
+Uma restrição única no PostgreSQL protege a chave de idempotência. Um índice único no MongoDB
+protege o EventId. O identificador de correlação não oferece garantia financeira.
+
+== Transações e consistência
+
+Não existe uma transação distribuída entre PostgreSQL, Pub/Sub e MongoDB. Cada contexto usa uma
+transação local:
+
+* Lançamentos possui consistência forte para lançamento, idempotência e Outbox.
+* Consolidado possui consistência forte ao aplicar um evento ao read model.
+* Entre os contextos existe consistência eventual.
+
+O padrão Outbox elimina a janela de dual-write no produtor. A deduplicação transacional elimina o
+efeito duplicado no consumidor.
+
+== Resiliência
+
+Retentativas são utilizadas somente em falhas transitórias e incluem espera progressiva e variação
+aleatória para evitar picos sincronizados. Circuit breaker protege chamadas a dependências
+instáveis, mas não substitui controle de vazão. Mensagens não processáveis são isoladas após o
+limite de tentativas e exigem investigação antes de replay.
+
+Timeouts, retentativas e limites de concorrência devem ser coordenados para evitar tempestades de
+requisições.
+
+== Observabilidade
+
+image::observability.svg[Arquitetura de observabilidade,align="center"]
+
+As aplicações emitem logs estruturados, métricas e traces por OpenTelemetry. A propagação do
+contexto acompanha HTTP e mensagens sem registrar payload financeiro completo.
+
+Sinais mínimos:
+
+* disponibilidade, erros e latências p95 e p99 das APIs;
+* quantidade e idade da pendência mais antiga da Outbox;
+* backlog, idade da mensagem mais antiga, retentativas e mensagens não processadas;
+* atraso entre confirmação do lançamento e atualização do saldo;
+* conexões, latência, conflitos e saturação dos bancos;
+* conflitos de idempotência, duplicatas e reprocessamentos.
+
+Todo alerta acionável deve apontar para um runbook com impacto, diagnóstico, mitigação, responsável
+e critério de escalonamento.
+
+== Auditoria e correções
+
+Lançamentos são append-only. Uma correção cria um lançamento compensatório que referencia o
+original; não altera nem apaga o fato anterior. A trilha registra identidade, instante, motivo e
+correlação, respeitando minimização e retenção de dados.
+
+== Contratos
+
+APIs e eventos possuem schema e versão explícitos. Alterações compatíveis adicionam campos
+opcionais. Alterações incompatíveis exigem nova versão e período de coexistência. O consumidor deve
+rejeitar versões desconhecidas de forma observável, sem produzir alteração parcial.
+
+== Reconciliação
+
+Uma rotina operacional compara, por comerciante e período, os lançamentos confirmados no
+PostgreSQL, os eventos publicados e os EventIds aplicados no MongoDB. Divergências geram evidência
+auditável e replay controlado. O saldo não é corrigido manualmente sem rastreabilidade.
+

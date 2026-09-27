@@ -1,0 +1,104 @@
+= Requisitos de qualidade
+
+== Árvore de qualidade
+
+[cols="2,2,4",options="header"]
+|===
+|Atributo |Prioridade |Cenário
+
+|Integridade
+|Muito alta
+|Um lançamento confirmado permanece durável e produz no máximo um efeito no saldo
+
+|Disponibilidade
+|Muito alta
+|Consolidado indisponível não impede novos lançamentos
+
+|Desempenho
+|Alta
+|A consulta sustentada atende à vazão e latência propostas
+
+|Atualidade
+|Alta
+|O read model converge dentro do limite em operação normal
+
+|Recuperabilidade
+|Alta
+|Falhas são retomadas sem intervenção destrutiva e sem duplicar efeito
+
+|Segurança
+|Alta
+|Um comerciante nunca acessa dados de outro
+
+|Operabilidade
+|Alta
+|O time localiza o ponto de falha e executa um procedimento conhecido
+
+|Manutenibilidade
+|Média
+|Casos de uso são testáveis e decisões permanecem rastreáveis
+|===
+
+== Cenários mensuráveis
+
+[cols="1,3,3,3",options="header"]
+|===
+|RNF |Estímulo |Resposta esperada |Evidência
+
+|001
+|Consolidado indisponível por 30 minutos
+|Registro continua sem chamada síncrona; pendências convergem depois
+|Teste de resiliência, disponibilidade, latência e idade da Outbox
+
+|002
+|Pico de 50 consultas por segundo durante 15 minutos
+|Pelo menos 95% de sucesso e p95 abaixo de 200 ms
+|Teste de carga com saturação e pool de conexões monitorados
+
+|003
+|Timeout do cliente, republicação ou reentrega
+|Nenhum lançamento confirmado perdido e nenhum efeito duplicado
+|Testes de concorrência, falha e unicidade
+
+|004
+|Fluxo normal de eventos
+|Atraso p95 da consolidação abaixo de 5 segundos
+|Timestamps correlacionados e histograma de lag
+
+|005
+|Falha de serviço ou dependência
+|Serviço essencial restaurado em até 30 minutos
+|Exercício periódico, backup restaurado e runbook validado
+
+|006
+|Tentativa de acessar outro comerciante
+|Acesso negado sem exposição de dados
+|Testes de autorização e auditoria
+
+|007
+|Evento confirmado não aparece no saldo
+|Operação identifica o estágio da falha por telemetria
+|Trace, logs correlacionados, métricas e procedimento de diagnóstico
+|===
+
+O catálogo detalhado está em
+link:../architecture/01-requirements/non-functional/README.md[Requisitos não funcionais].
+
+== Interpretação da tolerância a falhas
+
+Até 5% de falhas no teste do Consolidado representa um limite para requisições de consulta, não
+permissão para perder lançamentos. Uma requisição boa deve responder corretamente e dentro da
+latência definida. Erros causados pelo serviço, timeouts e limitação por falta de capacidade entram
+no indicador; erros comprovadamente causados por entrada inválida do cliente são acompanhados
+separadamente.
+
+== Estratégia de validação
+
+* Teste de carga com distribuição realista de comerciantes e datas.
+* Teste de concorrência sobre idempotência, Outbox e o mesmo documento diário.
+* Teste de falha após cada fronteira de commit e antes de cada ACK.
+* Indisponibilidade controlada do Pub/Sub, MongoDB, Worker e Consolidado API.
+* Failover do PostgreSQL e restauração de backup em ambiente não produtivo.
+* Replay e reconciliação de um período conhecido.
+* Teste de autorização horizontal e vazamento de dados em logs.
+

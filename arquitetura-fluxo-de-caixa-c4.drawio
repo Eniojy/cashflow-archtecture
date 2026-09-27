@@ -1,0 +1,935 @@
+<mxfile host="Electron" agent="Codex + diagrams.net" pages="7">
+  <diagram name="1. C4 N1 - Contexto" id="c4-l1">
+    <mxGraphModel dx="2440" dy="690" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="Customer Position&#xa;[BIAN Service Domain]" c4Type="Domain&#xa;" c4Description="Capacidade: manter e expor a posicao consolidada diaria do comerciante.&#xa;Consolidado (Worker + API + DB)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Q7thgcqlfkhUIPlID4cM-3">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#EAF2FB;fontColor=#12305C;align=left;verticalAlign=top;spacing=12;arcSize=10;strokeColor=#1061B0;strokeWidth=2;dashed=1;dashPattern=8 4;metaEdit=1;resizable=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];movable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1">
+            <mxGeometry height="290" width="400" x="540" y="440" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="t1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#1E4074;" value="C4 - Nivel 1 | Contexto da Plataforma de Fluxo de Caixa" vertex="1">
+          <mxGeometry height="34" width="900" x="60" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="t1b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#4D4D4D;" value="Visao para negocio: o Comerciante, os sistemas externos e os dois dominios que formam a plataforma." vertex="1">
+          <mxGeometry height="24" width="900" x="60" y="68" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Comerciante" c4Type="Person" c4Description="Dono do caixa. Registra debitos e creditos e consulta o saldo diario consolidado." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="p1">
+          <mxCell parent="1" style="html=1;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];resizable=0;" vertex="1">
+            <mxGeometry height="190" width="200" x="415" y="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Position Keeping&#xa;[BIAN Service Domain]" c4Type="Domain&#xa;" c4Description="Capacidade: registrar debitos/creditos e manter o log financeiro que origina a posicao." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s1">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#EAF2FB;fontColor=#12305C;align=left;verticalAlign=top;spacing=12;arcSize=10;strokeColor=#1061B0;strokeWidth=2;dashed=1;dashPattern=8 4;metaEdit=1;resizable=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];movable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1">
+            <mxGeometry height="290" width="390" x="90" y="440" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamentos" c4Type="Bounded Context" c4Technology="BIAN: Position Keeping" c4Description="Registra debitos e creditos e preserva o historico financeiro. Fonte da verdade e caminho de maior disponibilidade." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Technology%&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="n1domlanc">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="150" width="280" x="150" y="535" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado" c4Type="Bounded Context" c4Technology="BIAN: Customer Position" c4Description="Projeta e disponibiliza a posicao diaria do comerciante. Aceita consistencia eventual e escala independente." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Technology%&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="n1domcons">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="150" width="280" x="600" y="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Provedor de Identidade Corporativo" c4Type="External Software System" c4Description="Autentica usuarios e emite tokens OAuth 2.0 / OpenID Connect." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="e3">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="230" x="380" y="800" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="JSON/HTTPS" c4Description="Registra lancamentos" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r1">
+          <mxCell edge="1" parent="1" source="p1" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n1domlanc">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="JSON/HTTPS" c4Description="Consulta o consolidado" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r2">
+          <mxCell edge="1" parent="1" source="p1" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n1domcons">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="OIDC / OAuth 2.0" c4Description="Valida identidade e autorizacao" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r5">
+          <mxCell edge="1" parent="1" source="s1" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="e3">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="n1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E0;strokeColor=#D6B656;align=left;verticalAlign=top;fontSize=11;fontColor=#5A4A00;spacing=8;arcSize=6;" value="&lt;b&gt;Decisao de escopo&lt;/b&gt;&lt;br&gt;&lt;br&gt;Lancamentos e Consolidado sao dominios separados porque possuem ownership de dados, consistencia e disponibilidade diferentes. A integracao por evento evita que a falha do Consolidado interrompa novos lancamentos.&lt;br&gt;&lt;br&gt;&lt;b&gt;Legenda:&lt;/b&gt; azul escuro = pessoa; tracejado = sistema em escopo; azul interno = dominio/capacidade; cinza = sistema externo. Os dominios nao representam conteineres do nivel 2." vertex="1">
+          <mxGeometry height="210" width="300" x="-10" y="780" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2. C4 N2 - Conteineres" id="c4-l2">
+    <mxGraphModel dx="3048" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="" c4Type="Domain&#xa;" c4Application="Customer Position&#xa;[BIAN Service Domain]" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="CC3xgpp-BnhitAhWbdOp-1">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=#60a917;strokeColor=light-dark(#FFF7E0,#FFFFFF);fontColor=light-dark(#FFFFFF,#99FFCC);labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;fillStyle=auto;opacity=10;" vertex="1">
+            <mxGeometry height="550" width="880" x="570" y="680" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="t2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#1E4074;" value="C4 - Nivel 2 | Conteineres da Arquitetura Alvo" vertex="1">
+          <mxGeometry height="34" width="1000" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t2b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#4D4D4D;" value="Dois servicos logicos e tres processos .NET. Outbox + Pub/Sub desacopla a escrita; MongoDB mantem e serve o read model do Consolidado. Legenda: azul = conteiner; cilindro = dados; cinza = externo; tracejado = limite do sistema." vertex="1">
+          <mxGeometry height="42" width="1200" x="40" y="58" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="" c4Type="Domain&#xa;" c4Application="Position Keeping&#xa;[BIAN Service Domain]" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="b2">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=#60a917;strokeColor=light-dark(#FFFFFF,#FFFFFF);fontColor=light-dark(#FFFFFF,#99FFCC);labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;opacity=10;" vertex="1">
+            <mxGeometry height="550" width="880" x="580" y="110" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Comerciante" c4Type="Person" c4Description="Registra lancamentos e consulta o consolidado diario." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2p1">
+          <mxCell parent="1" style="html=1;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];resizable=0;" vertex="1">
+            <mxGeometry height="160" width="180" x="-210" y="230" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Provedor de Identidade" c4Type="External Software System" c4Description="OAuth 2.0 / OIDC. JWKS para validacao das assinaturas." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2idp">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="180" x="-180" y="545" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Portal Web (suposicao)" c4Type="Container" c4Technology="React SPA + CDN" c4Description="Tela para registrar lancamentos e consultar o saldo diario. " label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2web">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="200" x="190" y="235" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="API Gateway" c4Type="Container" c4Technology="Apigee / API Gateway" c4Description="Entrada unica. Valida o JWT, aplica rate limiting e throttling, roteia e concentra WAF." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2gw">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="170" width="200" x="190" y="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamentos API" c4Type="Container" c4Technology=".NET 10 LTS, ASP.NET Core, MediatR, EF Core, Cloud Run instance-based" c4Description="Registra debitos e creditos. Na mesma transacao grava o lancamento e o evento na Outbox. Um HostedService publica pendencias em segundo plano." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2lanc">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="240" x="590" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamentos DB" c4Type="Container" c4Technology="PostgreSQL (Cloud SQL)" c4Description="Fonte da verdade: lancamentos, outbox e chaves de idempotencia. Indice por comerciante e data." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2lancdb">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="140" width="220" x="600" y="480" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Topico lancamento-registrado" c4Type="Container" c4Technology="Pub/Sub" c4Description="Evento LancamentoRegistrado.v1. Retencao configurada em 7 dias; entrega push com retry e dead-letter policy." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2topic">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="250" x="1000" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado API" c4Type="Container" c4Technology=".NET 10 LTS, ASP.NET Core, MediatR, MongoDB.Driver, Cloud Run" c4Description="Consulta diretamente no MongoDB o documento de saldo pelo indice comercianteId + data." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2cons">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="240" x="590" y="700" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado Worker" c4Type="Container" c4Technology=".NET 10 LTS, ASP.NET Core, MediatR, MongoDB.Driver, Cloud Run" c4Description="Recebe push do Pub/Sub, deduplica por EventId e atualiza o read model em transacao MongoDB." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2wk">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="220" x="880" y="700" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado DB" c4Type="Container" c4Technology="MongoDB Atlas no Google Cloud" c4Description="Fonte persistente e de leitura: collections daily_balances e processed_events; indice por comercianteId + data." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2consdb">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="150" width="300" x="760" y="980" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="DLQ lancamento-registrado-dlq" c4Type="Container" c4Technology="Pub/Sub Dead Letter" c4Description="Dead-letter topic para mensagens que o Pub/Sub nao conseguiu entregar apos numero aproximado de tentativas. Reprocessamento controlado." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2dlq">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="140" width="250" x="1200" y="490" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Observabilidade" c4Type="External Software System" c4Description="Logs, metricas e traces (OpenTelemetry)." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2obs">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="200" x="1560" y="580" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTPS" c4Description="Usa" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r1">
+          <mxCell edge="1" parent="1" source="c2p1" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c2web">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="JSON/HTTPS" c4Description="Chama as APIs" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r2">
+          <mxCell edge="1" parent="1" source="c2web" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c2gw">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="OIDC / JWKS" c4Description="Valida o token" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r6">
+          <mxCell edge="1" parent="1" source="c2gw" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="c2idp">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="JSON/HTTPS" c4Description="POST /lancamentos" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r4">
+          <mxCell edge="1" parent="1" source="c2gw" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="c2lanc">
+            <mxGeometry relative="1" x="-0.8049" y="3" as="geometry">
+              <mxPoint y="1" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="JSON/HTTPS" c4Description="GET /consolidado" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r5">
+          <mxCell edge="1" parent="1" source="c2gw" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" target="c2cons">
+            <mxGeometry relative="1" x="-0.3231" y="-55" as="geometry">
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="EF Core / TCP" c4Description="Grava lancamento + outbox / le pendencias" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r7">
+          <mxCell edge="1" parent="1" source="c2lanc" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c2lancdb">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Pub/Sub" c4Description="HostedService publica evento" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r9">
+          <mxCell edge="1" parent="1" source="c2lanc" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c2topic">
+            <mxGeometry relative="1" x="0.0811" y="15" as="geometry">
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Pub/Sub push / HTTPS" c4Description="Entrega evento" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r10">
+          <mxCell edge="1" parent="1" source="c2topic" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="c2wk">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Dead-letter policy" c4Description="Encaminha apos ~5 tentativas" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r11">
+          <mxCell edge="1" parent="1" source="c2topic" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c2dlq">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="MongoDB Driver" c4Description="Transacao do read model" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r12">
+          <mxCell edge="1" parent="1" source="c2wk" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c2consdb">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="MongoDB Driver" c4Description="Find daily_balances" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r13">
+          <mxCell edge="1" parent="1" source="c2cons" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c2consdb">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="OTLP" c4Description="Todos os conteineres exportam telemetria" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2r15">
+          <mxCell edge="1" parent="1" source="c2wk" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c2obs">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3. C4 N3 - Dentro da Lancamentos API" id="c4-l3-lanc">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="2200" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#1E4074;" value="C4 - Nivel 3 | Componentes de Lancamentos (.NET 10 LTS)" vertex="1">
+          <mxGeometry height="34" width="1100" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t3b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#4D4D4D;" value="Mapa de responsabilidades do conteiner: Command de escrita, Query de leitura e publicacao assincrona. MediatR organiza os dois casos de uso dentro da API." vertex="1">
+          <mxGeometry height="24" width="1900" x="40" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F9FC;strokeColor=#D5DCE5;fontColor=#404040;align=center;verticalAlign=middle;fontSize=10;spacing=6;arcSize=6;" value="&lt;font color=&quot;#3162AF&quot;&gt;&lt;b&gt;1-7 AZUL&lt;/b&gt; Command: grava e responde 201&lt;/font&gt; &amp;nbsp; | &amp;nbsp; &lt;font color=&quot;#2E7D32&quot;&gt;&lt;b&gt;Q1-Q6 VERDE&lt;/b&gt; Query: le e responde 200&lt;/font&gt; &amp;nbsp; | &amp;nbsp; &lt;font color=&quot;#B85C00&quot;&gt;&lt;b&gt;A-D LARANJA&lt;/b&gt; Outbox em segundo plano&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="1200" x="820" y="92" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Lancamentos API" c4Type="ContainerScopeBoundary" c4Application="Container: .NET 10 LTS / Cloud Run" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="b3">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;verticalAlign=top;" vertex="1">
+            <mxGeometry height="1010" width="1480" x="320" y="170" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="z3http" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F8FC;strokeColor=#CBD8E6;dashed=1;dashPattern=4 4;align=left;verticalAlign=top;fontSize=13;fontStyle=1;fontColor=#46627A;spacing=10;arcSize=8;pointerEvents=0;" value="ENTRADA HTTP" vertex="1">
+          <mxGeometry height="540" width="340" x="350" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="z3app" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F8FC;strokeColor=#CBD8E6;dashed=1;dashPattern=4 4;align=left;verticalAlign=top;fontSize=13;fontStyle=1;fontColor=#46627A;spacing=10;arcSize=8;pointerEvents=0;" value="APLICACAO / MEDIATR" vertex="1">
+          <mxGeometry height="540" width="540" x="710" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="z3domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F8FC;strokeColor=#CBD8E6;dashed=1;dashPattern=4 4;align=left;verticalAlign=top;fontSize=13;fontStyle=1;fontColor=#46627A;spacing=10;arcSize=8;pointerEvents=0;" value="DOMINIO" vertex="1">
+          <mxGeometry height="540" width="440" x="1280" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="z3infra" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9F1;strokeColor=#E3C89B;dashed=1;dashPattern=4 4;align=left;verticalAlign=top;fontSize=13;fontStyle=1;fontColor=#7B5A22;spacing=10;arcSize=8;pointerEvents=0;" value="INFRAESTRUTURA: LEITURA + PERSISTENCIA + OUTBOX" vertex="1">
+          <mxGeometry height="340" width="1370" x="350" y="800" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="1. Endpoint POST /lancamentos" c4Type="Component" c4Technology="ASP.NET Core Minimal API" c4Description="Recebe o JSON {tipo, valor, data}, monta um objeto chamado &lt;b&gt;RegistrarLancamentoCommand&lt;/b&gt; e entrega ao MediatR.&lt;br&gt;&lt;br&gt;" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s1">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="160" width="280" x="380" y="320" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="MediatR (o mediador)" c4Type="Component" c4Technology="MediatR" c4Description="Recebe Command ou Query e resolve, via injecao de dependencia, o IRequestHandler correspondente. O endpoint nao conhece a implementacao do caso de uso." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s2">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="250" x="750" y="320" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Pipeline Behaviors" c4Type="Component" c4Technology="MediatR IPipelineBehavior" c4Description="Comuns: validacao, autorizacao, log, metricas e trace. Somente no Command: idempotencia por comerciante + Idempotency-Key + hash e transacao de escrita." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s3">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="210" width="240" x="730" y="520" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="RegistrarLancamentoCommandHandler" c4Type="Component" c4Technology="MediatR IRequestHandler" c4Description="O use case propriamente dito. Ele so orquestra: pede o objeto de dominio, manda salvar e manda gravar o aviso." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s4">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="380" x="1300" y="530" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamento " c4Type="Component" c4Technology="C# / objeto de dominio" c4Description="O objeto so consegue existir se for valido: valor maior que zero, tipo Debito ou Credito, data nao futura." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s5">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="160" width="380" x="1300" y="320" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Unit of Work: Lancamento + Outbox" c4Type="Component" c4Technology="EF Core 10 (repositorio + outbox)" c4Description="Em uma transacao grava lancamentos e outbox. Apos o COMMIT o endpoint responde 201; " label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s6">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="190" width="500" x="700" y="860" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Outbox Publisher (segundo plano)" c4Type="Component" c4Technology="HostedService + Cloud Run (instance-based, min 1)" c4Description="Busca lotes pendentes com bloqueio seguro, publica no Pub/Sub e marca como enviado. Retry com backoff; " label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s7">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="170" width="400" x="1260" y="860" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamentos DB" c4Type="Container" c4Technology="PostgreSQL" c4Description="Tabelas: lancamentos, outbox, idempotency_keys" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s8db">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="170" width="350" x="780" y="1220" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Topico lancamento-registrado" c4Type="Container" c4Technology="Pub/Sub" c4Description="Mensagem Publicada." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="s8top">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="280" x="1840" y="870" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="e1" edge="1" parent="1" source="s1" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="s2" value="2. Send(Command)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="s2" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#6B7280;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s3" value="3 / Q3. executa behaviors comuns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s3" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="s4" value="5. invoca Handler">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="745" />
+              <mxPoint x="1270" y="745" />
+              <mxPoint x="1270" y="665" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="s4" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="s5" value="6. cria agregado valido">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="s4" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s6" value="7. persiste agregado + evento">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="665" />
+              <mxPoint x="1240" y="810" />
+              <mxPoint x="950" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="s8db" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#B85C00;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#704000;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=6 4;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="s7" value="A. busca lote pendente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Technology="EF Core / TCP" c4Description="grava" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="e7">
+          <mxCell edge="1" parent="1" source="s6" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#3162AF;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="s8db">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="EF Core / TCP" c4Description="D. marca como enviado" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="e8">
+          <mxCell edge="1" parent="1" source="s7" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#704000;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.65;entryDx=0;entryDy=0;" target="s8db">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Pub/Sub" c4Description="B. publica; C. recebe messageId" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="e9">
+          <mxCell edge="1" parent="1" source="s7" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="s8top">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="e11" edge="1" parent="1" source="s3" style="endArrow=blockThin;html=1;strokeWidth=1;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#244A83;labelBackgroundColor=#FFFFFF;dashed=1;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;" target="s8db" value="4. consulta/reserva Idempotency-Key + hash">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="850" y="750" />
+              <mxPoint x="660" y="750" />
+              <mxPoint x="660" y="1280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="Q1. Endpoint GET /lancamentos" c4Type="Component" c4Technology="ASP.NET Core Minimal API" c4Description="Recebe data, filtros e paginacao. Obtem comercianteId do JWT, monta ObterExtratoDiarioQuery e devolve 200 OK com o DTO." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="lq-endpoint">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#6FBF73;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2E7D32;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="160" width="280" x="380" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="ObterExtratoDiarioQueryHandler" c4Type="Component" c4Technology="MediatR IRequestHandler" c4Description="Orquestra somente a leitura. Nao cria Aggregate, nao abre transacao de escrita e nao gera evento na Outbox." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="lq-handler">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#6FBF73;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2E7D32;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="210" width="240" x="990" y="520" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="LancamentoReadRepository" c4Type="Component" c4Technology="EF Core / AsNoTracking" c4Description="Consulta lancamentos por comercianteId + data, aplica filtros e paginacao e projeta diretamente o ExtratoDiarioDto." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="lq-repository">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#6FBF73;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2E7D32;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="170" width="260" x="380" y="860" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="lqe1" edge="1" parent="1" source="lq-endpoint" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#2E7D32;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="s2" value="Q2. Send(Query)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="630" />
+              <mxPoint x="690" y="490" />
+              <mxPoint x="812" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lqe2" edge="1" parent="1" source="s3" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#2E7D32;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="lq-handler" value="Q4. invoca QueryHandler">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqe3" edge="1" parent="1" source="lq-handler" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#2E7D32;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lq-repository" value="Q5. consulta read model">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="785" />
+              <mxPoint x="510" y="785" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lqe4" edge="1" parent="1" source="lq-repository" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#2E7D32;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;" target="s8db" value="Q6. SELECT comerciante + data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="1160" />
+              <mxPoint x="850" y="1160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4. C4 N3 - Dentro do Consolidado" id="c4-l3-cons">
+    <mxGraphModel dx="1462" dy="876" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2300" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#1E4074;" value="C4 - Nivel 3 | Componentes do Consolidado Diario" vertex="1">
+          <mxGeometry height="34" width="1200" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t4b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#4D4D4D;" value="Dois fluxos independentes no mesmo bounded context: o Worker projeta eventos com idempotencia; a API le diretamente o read model persistente no MongoDB." vertex="1">
+          <mxGeometry height="24" width="1900" x="40" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="legend4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F9FC;strokeColor=#D5DCE5;fontColor=#404040;align=center;verticalAlign=middle;fontSize=10;spacing=6;arcSize=6;" value="&lt;font color=&quot;#B85C00&quot;&gt;&lt;b&gt;LARANJA&lt;/b&gt; entrega/retry do evento&lt;/font&gt; &amp;nbsp; | &amp;nbsp; &lt;font color=&quot;#3162AF&quot;&gt;&lt;b&gt;AZUL&lt;/b&gt; projecao transacional&lt;/font&gt; &amp;nbsp; | &amp;nbsp; &lt;font color=&quot;#4C9A4C&quot;&gt;&lt;b&gt;VERDE&lt;/b&gt; consulta direta ao read model&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="1320" x="900" y="92" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Consolidado Worker - &quot;chegou um lancamento novo&quot;" c4Type="ContainerScopeBoundary" c4Application="Container: .NET 10 LTS / Pub/Sub push / Cloud Run" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="b4a">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;verticalAlign=top;" vertex="1">
+            <mxGeometry height="830" width="830" x="300" y="170" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado API - &quot;me da o relatorio do dia&quot;" c4Type="ContainerScopeBoundary" c4Application="Container: .NET 10 LTS / ASP.NET Core / MediatR / MongoDB.Driver / Cloud Run" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="b4b">
+          <mxCell parent="1" style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;verticalAlign=top;" vertex="1">
+            <mxGeometry height="830" width="820" x="1200" y="170" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="flow4worker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF5FC;strokeColor=#A9C4DF;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#24537A;spacingLeft=10;arcSize=6;pointerEvents=0;" value="PROJECAO ASSINCRONA (at-least-once)" vertex="1">
+          <mxGeometry height="42" width="740" x="350" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="flow4query" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F8F0;strokeColor=#AFD0AF;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#356A35;spacingLeft=10;arcSize=6;pointerEvents=0;" value="FLUXO B - CONSULTA DIRETA DO SALDO NO MONGODB" vertex="1">
+          <mxGeometry height="42" width="740" x="1240" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="tx4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5FBF6;strokeColor=#6AA56A;dashed=1;dashPattern=5 4;align=left;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#356A35;spacing=8;arcSize=8;pointerEvents=0;" value="TRANSACAO ATOMICA(ACID)" vertex="1">
+          <mxGeometry height="300" width="340" x="770" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="cache4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFCF7;strokeColor=#A9C88D;dashed=1;dashPattern=5 4;align=left;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#4D6D31;spacing=8;arcSize=8;pointerEvents=0;" value="LEITURA DIRETA: DOCUMENTO PRE-CALCULADO E INDEXADO" vertex="1">
+          <mxGeometry height="300" width="660" x="1340" y="500" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Topico lancamento-registrado" c4Type="Container" c4Technology="Pub/Sub" c4Description="Uma mensagem LancamentoRegistrado." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c4topic">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="260" x="20" y="300" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="DLQ (fila de erro)" c4Type="Container" c4Technology="Pub/Sub Dead Letter" c4Description="Pub/Sub encaminha a mensagem apos um numero aproximado de tentativas; alarme e reprocessamento manual seguro." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c4dlq">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="260" x="20" y="800" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado DB" c4Type="Container" c4Technology="MongoDB Atlas no Google Cloud" c4Description="Collections daily_balances e processed_events. Indices unicos por comerciante/data e EventId." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c4db">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="170" width="360" x="850" y="1130" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="1. Recebe o push do Pub/Sub" c4Type="Component" c4Technology="ASP.NET Core endpoint interno + Pub/Sub push" c4Description="Valida o envelope e transforma o evento versionado em AtualizarSaldoDiarioCommand. O endpoint aceita somente a identidade do Pub/Sub." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="a1">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="230" x="360" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="2. MediatR entrega ao handler" c4Type="Component" c4Technology="MediatR" c4Description="Transforma a mensagem em um comando &lt;b&gt;AtualizarSaldoDiario&lt;/b&gt; e chama quem sabe trata-lo. " label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="a2">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="220" x="650" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="3. Ja processei esta mensagem?" c4Type="Component" c4Technology="MongoDB Driver / collection processed_events" c4Description="O Pub/Sub pode entregar a MESMA mensagem duas vezes. O handler tenta registrar o &lt;i&gt;EventId&lt;/i&gt; protegido por indice unico.&lt;br&gt;&lt;br&gt;&lt;i&gt;Ja existe? ignora e confirma. Sem isso, o saldo dobraria.&lt;/i&gt;" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="a3">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="290" x="310" y="570" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="4. Soma no saldo do dia" c4Type="Component" c4Technology="MongoDB Driver" c4Description="Credito soma, debito subtrai. Faz upsert no documento (comercianteId, data) de &lt;i&gt;daily_balances&lt;/i&gt; junto com o EventId, na mesma transacao MongoDB.&lt;br&gt;&lt;br&gt;&lt;i&gt;A conta do relatorio ja fica pronta aqui.&lt;/i&gt;" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="a4">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="210" width="280" x="800" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="5. Confirma (2xx) ou solicita retry (erro)" c4Type="Component" c4Technology="HTTP + Pub/Sub retry/dead-letter policy" c4Description="Sucesso: responde 2xx e a entrega e confirmada. Erro: resposta nao-2xx; Pub/Sub tenta novamente com backoff e depois encaminha para a DLQ." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="a5">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="130" width="260" x="650" y="830" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="1. Chega o GET /consolidado/{data}" c4Type="Component" c4Technology="ASP.NET Core Minimal API" c4Description="O endpoint monta uma &lt;b&gt;ObterSaldoDiarioQuery&lt;/b&gt; e entrega ao MediatR." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="q1">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="150" width="230" x="1260" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="2. MediatR encaminha a Query" c4Type="Component" c4Technology="MediatR IRequest / IRequestHandler" c4Description="Resolve ObterSaldoDiarioQueryHandler. O handler coordena a consulta do read model sem conhecer detalhes do MongoDB." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="q2">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="160" width="260" x="1550" y="310" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="3. ReadModelRepository" c4Type="Component" c4Technology="MongoDB Driver" c4Description="Executa Find por comercianteId + data usando indice unico. Retorna um unico documento daily_balances ja calculado." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="q3">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="270" x="1370" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="4. Mapeia documento para DTO" c4Type="Component" c4Technology=".NET 10" c4Description="Converte daily_balances em totalCreditos, totalDebitos, saldo e dataHoraUltimaAtualizacao." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="q4">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="180" width="270" x="1740" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="5. Responde" c4Type="Component" c4Technology="ASP.NET Core Minimal API" c4Description="200 OK com totalCreditos, totalDebitos, saldo e dataHoraUltimaAtualizacao." label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;[%c4Type%: %c4Technology%]&lt;/font&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="q5">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;labelBackgroundColor=none;fillColor=#63BEF2;fontColor=#ffffff;align=left;verticalAlign=top;arcSize=8;strokeColor=#2086C9;metaEdit=1;spacing=10;spacingTop=6;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="280" x="1550" y="830" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Pub/Sub push / HTTPS" c4Description="Entrega evento" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r1">
+          <mxCell edge="1" parent="1" source="c4topic" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="a1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="ra1" edge="1" parent="1" source="a1" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="a2" value="2. Send(Command)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ra2" edge="1" parent="1" source="a2" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;" target="a3" value="3. verifica EventId">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ra3" edge="1" parent="1" source="a3" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="a4" value="4a. novo: EventId + upsert daily_balances">
+          <mxGeometry relative="1" x="-0.1724" y="-20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ra4" edge="1" parent="1" source="a4" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.45;entryDx=0;entryDy=0;" target="a5" value="5. ACK somente depois do COMMIT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Dead-letter policy" c4Description="apos ~5 tentativas" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r2">
+          <mxCell edge="1" parent="1" source="a5" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#B85C00;dashed=1;dashPattern=6 4;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="c4dlq">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="MongoDB Driver / TCP" c4Description="Transacao: insert EventId + upsert saldo" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r3">
+          <mxCell edge="1" parent="1" source="a4" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#3162AF;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c4db">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="rdup" edge="1" parent="1" source="a3" style="endArrow=blockThin;html=1;strokeWidth=1;endFill=1;strokeColor=#6A8DB3;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="a5" value="4b. duplicado: nao soma; confirma">
+          <mxGeometry relative="1" y="-15" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rq1" edge="1" parent="1" source="q1" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="q2" value="2. Send(Query)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rq2" edge="1" parent="1" source="q2" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="q3" value="3. handler consulta repositorio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rq3" edge="1" parent="1" source="q3" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.65;exitDx=0;exitDy=0;entryX=0;entryY=0.65;entryDx=0;entryDy=0;" target="q4" value="4. documento encontrado">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rq4" edge="1" parent="1" source="q4" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="q5" value="5. DTO consolidado">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Relationship" c4Technology="MongoDB Driver / TCP" c4Description="Find por comercianteId + data" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="r5">
+          <mxCell edge="1" parent="1" source="q3" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#4C9A4C;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.45;entryDx=0;entryDy=0;" target="c4db">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1435" y="1050" />
+                <mxPoint x="1230" y="1050" />
+                <mxPoint x="1230" y="1205" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="n4b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E0;strokeColor=#D6B656;align=left;verticalAlign=top;fontSize=11;fontColor=#5A4A00;spacing=8;arcSize=6;" value="&lt;b&gt;MongoDB como unica fonte do Consolidado&lt;/b&gt;&lt;br&gt;&lt;br&gt;A API busca um unico documento daily_balances pelo indice comercianteId + data. O saldo ja esta calculado; nao ha agregacao nem join no GET.&lt;br&gt;&lt;br&gt;Sem cache distribuido, a solucao evita TTL, invalidacao e defasagem adicional. O RNF de 50 req/s deve ser comprovado por teste de carga; so depois se reavalia outra camada." vertex="1">
+          <mxGeometry height="230" width="850" x="1320" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="n4c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E0;strokeColor=#D6B656;align=left;verticalAlign=top;fontSize=11;fontColor=#5A4A00;spacing=8;arcSize=6;" value="&lt;b&gt;Se o Worker parar&lt;/b&gt;&lt;br&gt;&lt;br&gt;As mensagens ficam esperando no topico (retencao de 7 dias) e sao processadas quando ele voltar.&lt;br&gt;&lt;br&gt;Nesse meio tempo a &lt;b&gt;Lancamentos API continua aceitando lancamentos normalmente&lt;/b&gt; - so o relatorio fica atrasado.&lt;br&gt;&lt;br&gt;&lt;i&gt;Esse e exatamente o requisito nao funcional do desafio.&lt;/i&gt;" vertex="1">
+          <mxGeometry height="220" width="700" x="20" y="1080" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="5 Fluxo do Sistema - Sequencia UML Simplificada" id="fluxo">
+    <mxGraphModel dx="1570" dy="730" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1370" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="seq-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=22;fontStyle=1;fontColor=#1E4074;" value="Fluxo do Sistema | Sequencia UML OldSchool" vertex="1">
+          <mxGeometry height="34" width="1050" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F9FC;strokeColor=#D5DCE5;fontColor=#404040;align=center;verticalAlign=middle;fontSize=10;spacing=6;arcSize=6;" value="&lt;font color=&quot;#3162AF&quot;&gt;&lt;b&gt;AZUL&lt;/b&gt; chamada sincrona&lt;/font&gt; &amp;nbsp; | &amp;nbsp; &lt;font color=&quot;#B85C00&quot;&gt;&lt;b&gt;LARANJA&lt;/b&gt; evento&lt;/font&gt; &amp;nbsp; | &amp;nbsp; &lt;font color=&quot;#2E7D32&quot;&gt;&lt;b&gt;VERDE&lt;/b&gt; consolidacao e leitura&lt;/font&gt; &amp;nbsp; | &amp;nbsp; tracejado = retorno" vertex="1">
+          <mxGeometry height="36" width="700" x="1160" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-domain-l" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#1E4074;" value="DOMINIO LANCAMENTOS" vertex="1">
+          <mxGeometry height="20" width="570" x="270" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-domain-c" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;fontColor=#2E7D32;" value="DOMINIO CONSOLIDADO" vertex="1">
+          <mxGeometry height="20" width="700" x="1130" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-phase1-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F7FC;strokeColor=#DCE9F7;arcSize=8;" value="" vertex="1">
+          <mxGeometry height="265" width="1860" x="20" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-phase2-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9F2;strokeColor=#F2D2B2;arcSize=8;" value="" vertex="1">
+          <mxGeometry height="365" width="1860" x="20" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-phase3-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4FAF4;strokeColor=#CFE6D0;arcSize=8;" value="" vertex="1">
+          <mxGeometry height="400" width="1860" x="20" y="865" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-p1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#083F75;strokeColor=#06315C;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;arcSize=8;" value="Comerciante" vertex="1">
+          <mxGeometry height="65" width="160" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-p2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;strokeColor=#0D5091;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=8;" value="Servico Lancamentos&lt;br&gt;&lt;font style=&quot;font-size: 9px&quot;&gt;API + MediatR + Outbox Publisher&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="230" x="265" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-p3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;strokeColor=#0D5091;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=8;" value="DB Lancamentos + Outbox&lt;br&gt;&lt;font style=&quot;font-size: 9px&quot;&gt;mesmo banco / mesma transacao&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="240" x="570" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-p4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1A7FA8;strokeColor=#0E5F80;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;arcSize=8;" value="Pub/Sub" vertex="1">
+          <mxGeometry height="65" width="170" x="905" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-p5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=8;" value="Servico Consolidado&lt;br&gt;&lt;font style=&quot;font-size: 9px&quot;&gt;Worker + API + MediatR&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="230" x="1175" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-p6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=8;" value="MongoDB Atlas&lt;br&gt;&lt;font style=&quot;font-size: 9px&quot;&gt;daily_balances + processed_events&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="300" x="1415" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-life1" parent="1" style="shape=line;html=1;strokeColor=#9E9E9E;dashed=1;dashPattern=4 4;direction=south;" vertex="1">
+          <mxGeometry height="1050" width="1" x="100" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-life2" parent="1" style="shape=line;html=1;strokeColor=#9E9E9E;dashed=1;dashPattern=4 4;direction=south;" vertex="1">
+          <mxGeometry height="1050" width="1" x="380" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-life3" parent="1" style="shape=line;html=1;strokeColor=#9E9E9E;dashed=1;dashPattern=4 4;direction=south;" vertex="1">
+          <mxGeometry height="1050" width="1" x="690" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-life4" parent="1" style="shape=line;html=1;strokeColor=#9E9E9E;dashed=1;dashPattern=4 4;direction=south;" vertex="1">
+          <mxGeometry height="1050" width="1" x="990" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-life5" parent="1" style="shape=line;html=1;strokeColor=#9E9E9E;dashed=1;dashPattern=4 4;direction=south;" vertex="1">
+          <mxGeometry height="1050" width="1" x="1290" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-life6" parent="1" style="shape=line;html=1;strokeColor=#9E9E9E;dashed=1;dashPattern=4 4;direction=south;" vertex="1">
+          <mxGeometry height="1050" width="1" x="1500" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-phase1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCE9F7;strokeColor=#3162AF;fontColor=#12305C;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;arcSize=6;shadow=1;" value="1. REGISTRAR | cliente aguarda" vertex="1">
+          <mxGeometry height="32" width="260" x="35" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-phase2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF0DD;strokeColor=#B85C00;fontColor=#7A3B00;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;arcSize=6;shadow=1;" value="2. CONSOLIDAR | cliente ja recebeu 201" vertex="1">
+          <mxGeometry height="32" width="340" x="35" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-phase3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4F2E4;strokeColor=#4C9A4C;fontColor=#1E4620;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;arcSize=6;shadow=1;" value="3. CONSULTAR | MongoDB direto" vertex="1">
+          <mxGeometry height="32" width="270" x="35" y="875" as="geometry" />
+        </mxCell>
+        <mxCell id="seq-m01" edge="1" parent="1" style="endArrow=blockThin;endFill=1;html=1;strokeWidth=1.5;strokeColor=#3162AF;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="1. POST /lancamentos + JWT + Idempotency-Key">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="250" as="sourcePoint" />
+            <mxPoint x="380" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m02" edge="1" parent="1" style="endArrow=blockThin;endFill=1;html=1;strokeWidth=1.5;strokeColor=#3162AF;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="2. Salva lancamento + evento pendente (uma transacao)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="310" as="sourcePoint" />
+            <mxPoint x="690" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m03" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.2;strokeColor=#3162AF;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="3. Commit concluido">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="370" as="sourcePoint" />
+            <mxPoint x="380" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m04" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.2;strokeColor=#3162AF;fontSize=11;fontStyle=1;fontColor=#12305C;labelBackgroundColor=#FFFFFF;" value="4. 201 - venda registrada">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="430" as="sourcePoint" />
+            <mxPoint x="100" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m05" edge="1" parent="1" style="endArrow=blockThin;endFill=1;html=1;strokeWidth=1.5;strokeColor=#B85C00;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="5. Busca eventos pendentes na Outbox">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="550" as="sourcePoint" />
+            <mxPoint x="690" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m06" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.2;strokeColor=#B85C00;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="6. Lote de eventos">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="600" as="sourcePoint" />
+            <mxPoint x="380" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m07" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;strokeWidth=2;strokeColor=#B85C00;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="7. Publica LancamentoRegistrado">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="650" as="sourcePoint" />
+            <mxPoint x="990" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m08" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;strokeWidth=2;strokeColor=#B85C00;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="8. Entrega evento (pode repetir)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="700" as="sourcePoint" />
+            <mxPoint x="1290" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m09" edge="1" parent="1" style="endArrow=blockThin;endFill=1;html=1;strokeWidth=1.5;strokeColor=#2E7D32;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="9. Registra EventId + atualiza saldo (uma transacao)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1290" y="750" as="sourcePoint" />
+            <mxPoint x="1500" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m10" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.2;strokeColor=#2E7D32;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="10. Commit concluido">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1500" y="790" as="sourcePoint" />
+            <mxPoint x="1290" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m11" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.2;strokeColor=#B85C00;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="11. ACK somente depois do commit">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1290" y="825" as="sourcePoint" />
+            <mxPoint x="990" y="825" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m12" edge="1" parent="1" style="endArrow=blockThin;endFill=1;html=1;strokeWidth=1.5;strokeColor=#2E7D32;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="12. GET /consolidado/diario?data=...">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="930" as="sourcePoint" />
+            <mxPoint x="1290" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m13" edge="1" parent="1" style="endArrow=blockThin;endFill=1;html=1;strokeWidth=1.5;strokeColor=#2E7D32;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="13. Find daily_balances por lojista + data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1290" y="1005" as="sourcePoint" />
+            <mxPoint x="1500" y="1005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m14" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.2;strokeColor=#2E7D32;fontSize=11;fontColor=#404040;labelBackgroundColor=#FFFFFF;" value="14. Documento de saldo + ultima atualizacao">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1500" y="1035" as="sourcePoint" />
+            <mxPoint x="1290" y="1035" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-m15" edge="1" parent="1" style="endArrow=open;endFill=0;html=1;dashed=1;strokeWidth=1.5;strokeColor=#2E7D32;fontSize=11;fontStyle=1;fontColor=#1E4620;labelBackgroundColor=#FFFFFF;" value="15. 200 - saldo consolidado">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1290" y="1130" as="sourcePoint" />
+            <mxPoint x="100" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq-resilience" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E0;strokeColor=#D6B656;fontColor=#5A4A00;align=left;verticalAlign=middle;fontSize=11;spacing=10;arcSize=6;" value="&lt;b&gt;Lembretes:&lt;/b&gt; Pub/Sub indisponivel: evento continua na Outbox. Evento duplicado: processed_events impede somar duas vezes. MongoDB indisponivel: somente Consolidado para; Lancamentos continua aceitando transacoes." vertex="1">
+          <mxGeometry height="58" width="1800" x="50" y="1285" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="6. Arquitetura de Transicao" id="transicao">
+    <mxGraphModel dx="1008" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t7" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#1E4074;" value="Arquitetura de Transicao (opcional) - Strangler Fig" vertex="1">
+          <mxGeometry height="34" width="1200" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t7b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#4D4D4D;" value="Hipotese explicita: use esta pagina somente se existir um legado. Na coexistencia, cada requisicao tem um unico gravador; as duas origens entregam o mesmo evento ao Consolidado." vertex="1">
+          <mxGeometry height="24" width="1450" x="40" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="f1h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E4074;strokeColor=none;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;arcSize=8;" value="FASE 1 - Antes (somente legado)" vertex="1">
+          <mxGeometry height="44" width="290" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f2h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B85C00;strokeColor=none;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;arcSize=8;" value="FASE 2 - Coexistencia controlada" vertex="1">
+          <mxGeometry height="44" width="820" x="360" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f3h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=none;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;arcSize=8;" value="FASE 3 - Somente nova plataforma" vertex="1">
+          <mxGeometry height="44" width="350" x="1210" y="110" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Comerciante" c4Type="Person" c4Description="Envia lancamentos ao caixa." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f1p">
+          <mxCell parent="1" style="html=1;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];resizable=0;" vertex="1">
+            <mxGeometry height="120" width="120" x="45" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Caixa Legado" c4Type="External Software System" c4Description="Processa lancamento e relatorio no mesmo sistema." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f1s">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="120" width="135" x="190" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Base Legada" c4Type="Container" c4Technology="SQL Server" c4Description="Fonte da verdade atual." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f1db">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="105" width="135" x="190" y="380" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="f1n" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E0;strokeColor=#D6B656;align=left;verticalAlign=top;fontSize=10;fontColor=#5A4A00;spacing=8;arcSize=6;" value="&lt;b&gt;Problema&lt;/b&gt;&lt;br&gt;&amp;#8226; Lancar e consolidar ficam acoplados.&lt;br&gt;&amp;#8226; Escala e evolucao limitadas." vertex="1">
+          <mxGeometry height="125" width="120" x="45" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="f1e" edge="1" parent="1" source="f1p" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;" target="f1s">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1e2" edge="1" parent="1" source="f1s" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;" target="f1db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#6B3800;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=6;" value="PASSO 1 - ROTEAR: o gateway escolhe um unico gravador para cada loja" vertex="1">
+          <mxGeometry height="32" width="780" x="380" y="165" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="API Gateway" c4Type="Container" c4Technology="Apigee" c4Description="Entrada unica. Roteia uma loja para o legado OU para a nova API; rollback por configuracao." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2gw">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="105" width="200" x="650" y="215" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Caixa Legado" c4Type="External Software System" c4Description="Atende somente as lojas ainda nao migradas." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2leg">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="105" width="180" x="400" y="355" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamentos API (nova)" c4Type="Container" c4Technology=".NET 10 LTS" c4Description="Atende lojas piloto; grava Lancamento + Outbox na mesma transacao." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2new">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="105" width="200" x="940" y="355" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="f2e1" edge="1" parent="1" source="f2gw" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="f2leg" value="1a. loja ainda nao migrada">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2e2" edge="1" parent="1" source="f2gw" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="f2new" value="1b. loja piloto / migrada">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#6B3800;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=6;" value="PASSO 2 - PUBLICAR: o legado passa por CDC + ACL; a nova API usa Outbox" vertex="1">
+          <mxGeometry height="32" width="780" x="380" y="490" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="2A. Base Legada" c4Type="Container" c4Technology="SQL Server" c4Description="O legado grava normalmente; nao faz dual-write." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2db">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#8C8496;fontSize=11;fontColor=#ffffff;align=center;strokeColor=#736782;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" vertex="1">
+            <mxGeometry height="100" width="170" x="380" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="2B. Conector CDC" c4Type="Container" c4Technology="Change Data Capture" c4Description="Le o log transacional; nao consulta a API." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2cdc">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#B85C00;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#8A4500;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="100" width="150" x="570" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="2C. ACL(Anti Corruption Layer)" c4Type="Container" c4Technology=".NET Worker" c4Description="Traduz o dado legado para o contrato canonico e trata idempotencia." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2acl">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="100" width="180" x="740" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="2D. lancamento-registrado" c4Type="Container" c4Technology="Pub/Sub" c4Description="Um contrato canonico; a origem nao importa para o consumidor." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2top">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="100" width="200" x="950" y="550" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="f2e3" edge="1" parent="1" source="f2leg" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#3162AF;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;" target="f2db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2e4" edge="1" parent="1" source="f2db" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#B85C00;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6B3800;labelBackgroundColor=#FFFFFF;dashed=1;" target="f2cdc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2e5" edge="1" parent="1" source="f2cdc" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#B85C00;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6B3800;labelBackgroundColor=#FFFFFF;dashed=1;" target="f2acl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2e6" edge="1" parent="1" source="f2acl" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#B85C00;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6B3800;labelBackgroundColor=#FFFFFF;dashed=1;" target="f2top">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2e7" edge="1" parent="1" source="f2new" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#B85C00;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6B3800;labelBackgroundColor=#FFFFFF;dashed=1;" target="f2top">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#6B3800;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;arcSize=6;" value="PASSO 3 - CONSOLIDAR: um consumidor, independente da origem" vertex="1">
+          <mxGeometry height="32" width="580" x="580" y="690" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="3. Consolidado" c4Type="Container" c4Technology=".NET Worker + API" c4Description="Deduplica por EventId, atualiza o read model e disponibiliza o saldo." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f2cons">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="115" width="230" x="760" y="750" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="f2e8" edge="1" parent="1" source="f2top" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#B85C00;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#6B3800;labelBackgroundColor=#FFFFFF;dashed=1;" target="f2cons">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="API Gateway" c4Type="Container" c4Technology="Apigee" c4Description="100% do trafego na plataforma nova." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f3gw">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="110" width="150" x="1225" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Lancamentos API" c4Type="Container" c4Technology=".NET 10 LTS" c4Description="Unica fonte da verdade de lancamentos." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f3new">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="110" width="150" x="1400" y="200" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Pub/Sub" c4Type="Container" c4Technology="lancamento-registrado" c4Description="Eventos somente da nova API." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f3top">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1A7FA8;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5F80;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="105" width="150" x="1400" y="370" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Consolidado" c4Type="Container" c4Technology="Worker + API" c4Description="Read model e cache de leitura." label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="f3cons">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
+            <mxGeometry height="105" width="150" x="1225" y="370" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="f3off" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F2F2F2;strokeColor=#8C8496;fontColor=#666666;align=center;verticalAlign=middle;fontSize=11;" value="&lt;b&gt;Legado desativado&lt;/b&gt;&lt;br&gt;Historico migrado; CDC e ACL removidos." vertex="1">
+          <mxGeometry height="90" width="325" x="1225" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="f3e1" edge="1" parent="1" source="f3gw" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;" target="f3new">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3e2" edge="1" parent="1" source="f3new" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;dashed=1;" target="f3top">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3e3" edge="1" parent="1" source="f3top" style="endArrow=blockThin;html=1;strokeWidth=2;endFill=1;strokeColor=#4C9A4C;rounded=0;edgeStyle=orthogonalEdgeStyle;fontSize=10;fontColor=#404040;labelBackgroundColor=#FFFFFF;dashed=1;" target="f3cons">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E0;strokeColor=#D6B656;align=left;verticalAlign=top;fontSize=11;fontColor=#5A4A00;spacing=8;arcSize=6;" value="&lt;b&gt;Como ler a Fase 2&lt;/b&gt;&lt;br&gt;&amp;#8226; &lt;b&gt;Um unico gravador por requisicao:&lt;/b&gt; o gateway envia a loja ao legado OU a nova API; nunca aos dois. Isso evita dupla gravacao.&lt;br&gt;&amp;#8226; &lt;b&gt;Caminho legado:&lt;/b&gt; o caixa grava apenas na Base Legada; CDC le o log transacional e a ACL traduz a mudanca para o evento canonico.&lt;br&gt;&amp;#8226; &lt;b&gt;Caminho novo:&lt;/b&gt; a API grava Lancamento + Outbox e publica exatamente o mesmo contrato no Pub/Sub.&lt;br&gt;&amp;#8226; &lt;b&gt;Consumidor unico:&lt;/b&gt; o Consolidado deduplica por EventId e nao precisa saber se o lancamento veio do legado ou da nova API.&lt;br&gt;&amp;#8226; &lt;b&gt;Rollback e saida:&lt;/b&gt; durante o piloto, o gateway pode devolver a loja ao legado. A Fase 3 comeca apos 100% das lojas migradas, reconciliacao sem divergencias e historico transferido." vertex="1">
+          <mxGeometry height="170" width="1520" x="40" y="920" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="observability-simple" name="7. Observabilidade">
+    <mxGraphModel dx="1248" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#1E4074;" value="Observabilidade - do sinal à ação" vertex="1">
+          <mxGeometry height="40" width="700" x="40" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#4D4D4D;" value="Logs, métricas e traces percorrem um caminho único e terminam em dashboards, alertas e runbooks." vertex="1">
+          <mxGeometry height="28" width="900" x="40" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="h1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E4074;strokeColor=#16345E;fontColor=#FFFFFF;fontStyle=1;fontSize=14;" value="1. FONTES" vertex="1">
+          <mxGeometry height="42" width="310" x="40" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B85C00;strokeColor=#914800;fontColor=#FFFFFF;fontStyle=1;fontSize=14;" value="2. COLETA E PADRONIZAÇÃO" vertex="1">
+          <mxGeometry height="42" width="330" x="455" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="h3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontStyle=1;fontSize=14;" value="3. VISUALIZA, ALERTA E AGE" vertex="1">
+          <mxGeometry height="42" width="350" x="890" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="apps" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#FFFFFF;fontSize=14;spacing=12;" value="&lt;b&gt;Serviços .NET&lt;/b&gt;&lt;br&gt;&lt;br&gt;Lançamentos API&lt;br&gt;Consolidado API&lt;br&gt;Consolidado Worker&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#D6E7FF&quot;&gt;CorrelationId ponta a ponta&lt;/font&gt;" vertex="1">
+          <mxGeometry height="185" width="250" x="70" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="deps" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#5D6D7E;fontColor=#263238;fontSize=13;spacing=12;" value="&lt;b&gt;Serviços gerenciados&lt;/b&gt;&lt;br&gt;&lt;br&gt;Pub/Sub e DLQ&lt;br&gt;Cloud SQL&lt;br&gt;MongoDB Atlas&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#566573&quot;&gt;Métricas de saúde e capacidade&lt;/font&gt;" vertex="1">
+          <mxGeometry height="165" width="250" x="70" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="otel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D97706;strokeColor=#9A5204;fontColor=#FFFFFF;fontSize=14;spacing=12;" value="&lt;b&gt;OpenTelemetry Collector&lt;/b&gt;&lt;br&gt;&lt;br&gt;Recebe via OTLP&lt;br&gt;enriquece e encaminha&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#FFF1D6&quot;&gt;logs + métricas + traces&lt;/font&gt;" vertex="1">
+          <mxGeometry height="180" width="250" x="495" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="ops" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438B46;strokeColor=#28602B;fontColor=#FFFFFF;fontSize=14;spacing=12;" value="&lt;b&gt;Google Cloud Operations&lt;/b&gt;&lt;br&gt;&lt;br&gt;Cloud Logging&lt;br&gt;Cloud Monitoring&lt;br&gt;Cloud Trace&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#DFF4E1&quot;&gt;busca + dashboards + alertas&lt;/font&gt;" vertex="1">
+          <mxGeometry height="185" width="250" x="940" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sre" parent="1" style="shape=mxgraph.basic.person;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=13;spacingTop=15;" value="&lt;b&gt;SRE / Operação&lt;/b&gt;&lt;br&gt;&lt;br&gt;Recebe o alerta&lt;br&gt;correlaciona a operação&lt;br&gt;executa o runbook" vertex="1">
+          <mxGeometry height="155" width="160" x="985" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="signals" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=18;fillColor=#FFF7E0;strokeColor=#D6B656;fontColor=#5A4A00;fontSize=12;align=left;spacing=10;" value="&lt;b&gt;Sinais críticos&lt;/b&gt;&lt;br&gt;• 5xx e latência&lt;br&gt;• idade da Outbox&lt;br&gt;• backlog e DLQ&lt;br&gt;• lag de consolidação&lt;br&gt;• saturação dos bancos" vertex="1">
+          <mxGeometry height="145" width="310" x="465" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="apps" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#3162AF;strokeWidth=2;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="otel" value="OTLP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="deps" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#5D6D7E;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;" target="otel" value="métricas nativas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="otel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#B85C00;strokeWidth=2;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="ops" value="exporta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ops" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2E7D32;strokeWidth=2;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="sre" value="alerta acionável">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#82B366;fontColor=#1B5E20;fontStyle=1;fontSize=13;" value="Resultado: detectar, entender e agir antes que o atraso operacional vire impacto financeiro." vertex="1">
+          <mxGeometry height="42" width="800" x="240" y="650" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

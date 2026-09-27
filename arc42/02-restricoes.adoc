@@ -1,0 +1,46 @@
+= Restrições
+
+== Restrições técnicas
+
+* As aplicações serão desenvolvidas em .NET 10 LTS.
+* Os workloads serão empacotados como contêineres e executados no Cloud Run.
+* Lançamentos utilizará PostgreSQL gerenciado como fonte da verdade financeira.
+* Consolidado utilizará MongoDB Atlas como armazenamento do read model.
+* A integração entre os domínios utilizará Pub/Sub e contratos de evento versionados.
+* Cada bounded context possui seu próprio armazenamento; não haverá banco compartilhado.
+* A primeira versão não utilizará Redis ou outro cache distribuído.
+* O código utilizará CQRS leve e MediatR dentro de cada processo, sem Event Sourcing.
+* O modelo arquitetural será documentado em C4 até o nível 3.
+
+== Restrições de negócio e conformidade
+
+* Lançamentos confirmados são append-only; correções devem ser representadas por novos lançamentos
+  compensatórios.
+* O comerciante somente pode acessar seus próprios dados.
+* O identificador do comerciante deve vir da identidade autenticada, nunca de um valor confiado no
+  corpo da requisição.
+* Nenhum lançamento confirmado pode ser descartado em razão de falha da mensageria ou do
+  Consolidado.
+* A defasagem temporária do saldo é aceita e precisa ser visível ao consumidor.
+
+== Restrições organizacionais
+
+* A solução deve permanecer simples o suficiente para ser explicada e operada por uma equipe
+  pequena.
+* Serviços gerenciados são preferidos quando reduzem esforço operacional.
+* A introdução de componentes adicionais exige evidência obtida por métricas, testes de carga ou
+  necessidade de negócio.
+* BIAN é utilizado como referência para nomear e delimitar capacidades bancárias; a solução não
+  declara conformidade integral com todo o framework.
+
+== Premissas que exigem validação
+
+* A carga de 50 consultas por segundo representa o pico esperado para o Consolidado.
+* O documento diário indexado no MongoDB atende às consultas sem cache.
+* A região, residência e retenção dos dados serão confirmadas com negócio e jurídico.
+* A política de retenção das chaves de idempotência, Outbox e eventos processados será definida
+  antes da produção.
+* As metas de disponibilidade, atraso e recuperação serão comprovadas por testes.
+* Volumetria mensal, distribuição por comerciante e concentração de escritas ainda precisam ser
+  refinadas.
+

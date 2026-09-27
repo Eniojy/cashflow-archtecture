@@ -1,0 +1,44 @@
+= Arquitetura da Solução de Fluxo de Caixa
+Enio Jun Yonashiro
+:revnumber: 1.0
+:revdate: 2026-09-27
+:revremark: Documentação arc42 baseada nos requisitos, diagramas C4 e ADRs do projeto
+:doctype: book
+:encoding: utf-8
+:lang: pt-BR
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+:data-uri:
+:imagesdir: images
+:source-highlighter: highlight.js
+
+Este documento descreve a arquitetura da solução de fluxo de caixa no formato arc42.
+Os diagramas SVG apresentados aqui são visualizações exportadas; a fonte editável continua sendo
+link:../arquitetura-fluxo-de-caixa-c4.drawio[arquitetura-fluxo-de-caixa-c4.drawio].
+
+include::01-introducao-e-objetivos.adoc[leveloffset=+1]
+
+include::02-restricoes.adoc[leveloffset=+1]
+
+include::03-contexto-e-escopo.adoc[leveloffset=+1]
+
+include::04-estrategia-da-solucao.adoc[leveloffset=+1]
+
+include::05-visao-de-blocos.adoc[leveloffset=+1]
+
+include::06-visao-de-execucao.adoc[leveloffset=+1]
+
+include::07-visao-de-implantacao.adoc[leveloffset=+1]
+
+include::08-conceitos-transversais.adoc[leveloffset=+1]
+
+include::09-decisoes-arquiteturais.adoc[leveloffset=+1]
+
+include::10-requisitos-de-qualidade.adoc[leveloffset=+1]
+
+include::11-riscos-e-divida-tecnica.adoc[leveloffset=+1]
+
+include::12-glossario.adoc[leveloffset=+1]
+

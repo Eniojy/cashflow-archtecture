@@ -1,0 +1,56 @@
+= Estratégia da solução
+
+== Separação por capacidades
+
+Lançamentos e Consolidado são bounded contexts diferentes:
+
+* *Lançamentos* registra fatos financeiros, preserva invariantes e é a fonte da verdade dos
+  lançamentos.
+* *Consolidado* mantém uma projeção diária otimizada para leitura e pode ser reconstruído a partir
+  dos fatos confirmados.
+
+A separação permite deploy, escala e falha independentes. Uma queda do Consolidado causa atraso no
+saldo, mas não interrompe o registro financeiro.
+
+== Integração orientada a eventos
+
+A API mantém a entrada síncrona por HTTP e integra os bounded contexts de forma assíncrona. Após o
+commit local, o Outbox Publisher envia +LancamentoRegistrado.v1+ ao Pub/Sub. O transporte oferece
+entrega pelo menos uma vez; a aplicação garante efeito financeiro idempotente.
+
+Essa escolha aceita consistência eventual no saldo em troca de isolamento de falhas e capacidade
+de recuperação.
+
+== Integridade ponta a ponta
+
+* Lançamento, chave de idempotência e Outbox são gravados na mesma transação PostgreSQL.
+* O publisher processa pendências em lotes, com lease, retentativas graduais e concorrência segura.
+* O mesmo EventId é preservado em republicações.
+* O Worker insere o EventId e atualiza o saldo na mesma transação MongoDB.
+* O ACK somente é enviado após o commit.
+* Reconciliação compara a fonte da verdade com a projeção e permite replay controlado.
+
+== CQRS leve
+
+Commands representam intenções de alteração e Queries representam consultas. MediatR despacha
+essas operações dentro do processo e Behaviors aplicam responsabilidades transversais. Não existe
+Event Store e o estado não é reconstruído por reprodução de eventos; por isso a abordagem é
+classificada como CQRS leve, sem Event Sourcing.
+
+MediatR não desacopla Lançamentos de Consolidado. Esse papel pertence ao Pub/Sub e ao contrato de
+evento versionado.
+
+== Persistência adequada a cada contexto
+
+PostgreSQL atende ao caminho de escrita que exige transações, constraints, idempotência e Outbox.
+MongoDB representa o saldo diário como um documento por comerciante e data, pronto para leitura.
+A persistência poliglota é um trade-off consciente e exige operação, backup e conhecimento de duas
+tecnologias.
+
+== Simplicidade evolutiva
+
+O MVP evita Redis, Kubernetes próprio, Event Sourcing e novos serviços sem necessidade comprovada.
+O HostedService pode permanecer junto à aplicação enquanto compartilhar ciclo de vida e escala for
+suficiente; ele poderá se tornar um Worker separado se backlog, isolamento ou escala independente
+justificarem a mudança.
+

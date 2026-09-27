@@ -1,0 +1,101 @@
+= Introdução e objetivos
+
+== Visão do problema
+
+A solução controla lançamentos financeiros de crédito e débito e disponibiliza o saldo diário
+consolidado de cada comerciante. O problema prioritário é preservar a integridade e a disponibilidade
+do registro financeiro mesmo quando a consolidação estiver indisponível ou atrasada.
+
+Uma confirmação de lançamento possui significado de negócio: o registro foi persistido de forma
+durável no domínio Lançamentos e existe uma intenção persistida de propagar esse fato ao domínio
+Consolidado. A confirmação não significa que o saldo já foi atualizado.
+
+== Objetivos de negócio
+
+* Permitir que o comerciante registre créditos e débitos com segurança.
+* Manter novos lançamentos disponíveis quando o Consolidado estiver indisponível.
+* Disponibilizar um saldo diário pré-calculado, simples e rápido de consultar.
+* Evitar perda e efeito financeiro duplicado em retentativas e reentregas.
+* Preservar rastreabilidade e auditoria das operações financeiras.
+* Oferecer uma solução pragmática, compreensível por equipes com diferentes níveis de experiência.
+
+== Requisitos funcionais
+
+[cols="1,3,2",options="header"]
+|===
+|Identificador |Capacidade |Resultado principal
+
+|RF 001
+|Registrar lançamento de crédito ou débito
+|Lançamento, idempotência e Outbox confirmados atomicamente; resposta de criação
+
+|RF 002
+|Consultar lançamentos do comerciante
+|Histórico paginado, filtrado e isolado pela identidade autenticada
+
+|RF 003
+|Atualizar o consolidado diário
+|Evento aplicado uma única vez ao documento diário
+
+|RF 004
+|Consultar o consolidado diário
+|Totais, saldo e instante da última atualização
+|===
+
+O catálogo detalhado está em
+link:../architecture/01-requirements/functional/README.md[Requisitos funcionais].
+
+== Metas de qualidade prioritárias
+
+[cols="1,3,3",options="header"]
+|===
+|Prioridade |Meta |Abordagem
+
+|1
+|Nenhum lançamento confirmado pode ser perdido
+|Transação local no PostgreSQL, Outbox e alta disponibilidade do banco
+
+|2
+|O mesmo pedido ou evento não pode causar efeito financeiro duplicado
+|Chave de idempotência na entrada e EventId único no consumidor
+
+|3
+|Lançamentos permanece disponível se o Consolidado falhar
+|Integração assíncrona por eventos e bancos separados
+
+|4
+|O saldo deve ser rápido e indicar sua atualidade
+|Read model no MongoDB e campo de última atualização
+
+|5
+|Falhas devem ser detectáveis e recuperáveis
+|Logs, métricas, traces, alertas, runbooks e reconciliação
+|===
+
+== Partes interessadas
+
+[cols="2,3,3",options="header"]
+|===
+|Parte interessada |Interesse |Conteúdo relevante
+
+|Comerciante
+|Registrar movimentos e consultar dados próprios
+|Comportamento funcional, segurança e atualidade do saldo
+
+|Negócio e produto
+|Continuidade, integridade financeira e evolução da solução
+|Contexto, metas de qualidade e trade-offs
+
+|Desenvolvimento
+|Implementar e evoluir os serviços
+|Blocos, execução, conceitos transversais e ADRs
+
+|Plataforma e SRE
+|Operar, observar, escalar e recuperar a solução
+|Implantação, observabilidade, riscos e procedimentos
+
+|Segurança e identidade
+|Proteger acesso, dados e credenciais
+|Autenticação, autorização, criptografia e auditoria
+|===
+

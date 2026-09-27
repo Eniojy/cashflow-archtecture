@@ -1,0 +1,47 @@
+= Decisões arquiteturais
+
+As decisões completas permanecem nos Architecture Decision Records. Este capítulo fornece o índice
+e a relação com a estratégia.
+
+[cols="1,3,3",options="header"]
+|===
+|ADR |Decisão |Trade-off principal
+
+|link:../architecture/03-adrs/ADR-001-microsservicos.md[001]
+|Microsserviços pragmáticos para Lançamentos e Consolidado
+|Isolamento de falhas e escala em troca de maior complexidade operacional
+
+|link:../architecture/03-adrs/ADR-002-integracao-assincrona-eventos.md[002]
+|Integração assíncrona orientada a eventos
+|Disponibilidade independente em troca de consistência eventual
+
+|link:../architecture/03-adrs/ADR-003-transactional-outbox.md[003]
+|Transactional Outbox para publicação confiável
+|Recuperação do dual-write em troca de armazenamento e processamento adicionais
+
+|link:../architecture/03-adrs/ADR-004-cqrs-mediatr-sem-event-sourcing.md[004]
+|CQRS leve e MediatR, sem Event Sourcing
+|Casos de uso e pipeline padronizados em troca de mais tipos e fluxo indireto
+
+|link:../architecture/03-adrs/ADR-005-stack-dotnet-postgresql-mongodb-gcp.md[005]
+|.NET, PostgreSQL, MongoDB e serviços gerenciados no GCP
+|Adequação de cada tecnologia em troca de persistência poliglota e dependência operacional
+
+|link:../architecture/03-adrs/ADR-006-mongodb-sem-cache.md[006]
+|MongoDB como read model, sem Redis no MVP
+|Menor complexidade, com toda consulta chegando ao banco
+
+|link:../architecture/03-adrs/ADR-007-idempotencia-ponta-a-ponta.md[007]
+|Idempotência na API e no consumidor
+|Integridade sob retry em troca de armazenamento, índices e política de retenção
+|===
+
+== Política de evolução
+
+Uma decisão aceita não deve ser apagada quando mudar. Um novo ADR registra a substituição, e o
+anterior passa a indicar que foi substituído e aponta para a nova decisão. Decisões devem ser
+reavaliadas quando mudarem volume, equipe, custo, requisitos regulatórios ou capacidade operacional.
+
+O índice oficial está em
+link:../architecture/03-adrs/README.md[Architecture Decision Records].
+
